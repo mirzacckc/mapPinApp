@@ -1,0 +1,14 @@
+<div class="card popup-container p-3">
+  <h5 class="card-title text-center">Nem ve Sıcaklık Sensörü</h5>
+  <p class="text-muted text-center mb-4">{{name}}</p>
+  <div class="d-flex align-items-center mb-3">
+    <i class="bi bi-thermometer-half icon-blue me-2"></i>
+    <span class="me-auto">{{temperature}}°C</span>
+    <button class="btn btn-outline-primary custom-btn" (click)="onTemperatureUpdate()">Sıcaklık Ayarla</button>
+  </div>
+  <div class="d-flex align-items-center">
+    <i class="bi bi-droplet-half icon-blue me-2"></i>
+    <span class="me-auto">%{{humidity}}</span>
+    <button class="btn btn-outline-primary custom-btn" (click)="onHumidityUpdate()">Nem Ayarla</button>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="row">
+  @for (data of pinInfosData; track data.id){
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-1"
+         (click)="onClickCard(data)">
+      <div class="sensor-card"
+            [ngClass]="data.isBlueBorder ? 'selected-card-border-color' : ''">
+        <div class="header">
+          <div class="title">
+            <p>Sıcaklık ve Nem Sensörü</p>
+            <span>{{data?.name}}</span>
+          </div>
+          <div class="battery-icon{{data?.batteryLevel}}">
+            <i class="bi bi-battery{{data?.batteryLevel}}"></i>
+          </div>
+        </div>
+        <div class="content">
+          <div class="temperature">
+            <i class="bi bi-thermometer-sun"></i>
+            <p>{{data?.temperature}}°C</p>
+          </div>
+          <div class="humidity">
+            <i class="bi bi-droplet"></i>
+            <p>% {{data?.humidity}}</p>
+          </div>
+        </div>
+        <div class="footer">
+          <p>{{ time | date: 'dd/MM/yyyy HH:mm' }}</p>
+          <div class="temperature-icon">
+            <i class="bi bi-thermometer-sun"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+

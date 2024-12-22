@@ -1,0 +1,33 @@
+<div class="popup-container">
+  <h4 class="popup-title">
+    {{ updateType === 'temperature' ? 'Sıcaklık' : 'Nem' }} Ayarla
+  </h4>
+  <p class="popup-room">{{ name }}</p>
+
+  <div class="popup-content">
+    <div>
+      <p>Mevcut</p>
+      <div class="current-value">
+        <i
+          [class]="'bi ' + (updateType === 'temperature' ? 'bi-thermometer' : 'bi-droplet')"
+        ></i>
+        <span>{{ currentValue }} {{ updateType === 'temperature' ? '°C' : '%' }}</span>
+      </div>
+    </div>
+
+    <div>
+      <p>Yeni</p>
+      <input
+        class="form-control new-value-input"
+        (change)="setValue($event)"
+        name="newValue"
+        placeholder="Yeni Değer"
+      />
+    </div>
+  </div>
+
+  <div class="popup-actions">
+    <button class="btn btn-outline-primary" (click)="onCancel()">İptal et</button>
+    <button class="btn btn-primary" (click)="onUpdate()">Güncelle</button>
+  </div>
+</div>
